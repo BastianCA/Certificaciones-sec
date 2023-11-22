@@ -10,7 +10,7 @@ const AppMenu = () => {
         {
           label: "E-Commerce",
           icon: "pi pi-fw pi-home",
-          to: "/",
+          to: "/dashboard-e-commerce",
         },
         {
           label: "Banking",

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-sync-scripts */
 "use client";
 import { LayoutProvider } from "../layout/context/layoutcontext";
 
@@ -16,7 +15,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script src="http://localhost:8097"></script>
         <link
           id="theme-link"
           href={`/theme/theme-light/indigo/theme.css`}

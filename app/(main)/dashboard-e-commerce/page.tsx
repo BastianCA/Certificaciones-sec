@@ -10,13 +10,13 @@ import { InputText } from "primereact/inputtext";
 import { Rating } from "primereact/rating";
 import { Tooltip } from "primereact/tooltip";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { ProductService } from "../../demo/service/ProductService";
-import { LayoutContext } from "../../layout/context/layoutcontext";
+import { ProductService } from "../../../demo/service/ProductService";
+import { LayoutContext } from "../../../layout/context/layoutcontext";
 import type {
   ChartDataState,
   ChartOptionsState,
   Demo,
-} from "../../types/types";
+} from "../../../types/types";
 
 export default function ECommerce() {
   const [products, setProducts] = useState<Demo.Product[]>([]);
