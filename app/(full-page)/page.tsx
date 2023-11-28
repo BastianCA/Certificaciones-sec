@@ -5,25 +5,26 @@ import { Button } from "primereact/button";
 import { Checkbox } from "primereact/checkbox";
 import { InputText } from "primereact/inputtext";
 import { useContext, useState } from "react";
+import { PiHeadsetThin } from "react-icons/pi";
 import { LayoutContext } from "../../layout/context/layoutcontext";
 import type { Page } from "../../types/types";
+
 const Login: Page = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const router = useRouter();
   const { layoutConfig } = useContext(LayoutContext);
-  const [imageSrc, setImageSrc] = useState(
-    "/layout/images/Logo-homecenter.png"
-  );
-  // const dark = layoutConfig.colorScheme !== "light";
+  const [imageSrc, setImageSrc] = useState("/layout/images/Sodimac.png");
+  const dark = layoutConfig.colorScheme !== "light";
+
   return (
     <>
-      <div className="min-h-screen flex justify-content-center align-items-center">
+      <div className="min-h-screen flex justify-content-center align-items-center bg-white">
         <div className="py-7 px-4 md:px-7 z-1">
           <div className="mb-4">
             <div className="flex justify-content-center align-items-center">
               <Image
-                width={300}
-                height={81}
+                width={280}
+                height={51}
                 src={imageSrc}
                 alt="logo empresa"
               />
@@ -42,7 +43,7 @@ const Login: Page = () => {
               <InputText
                 id="email"
                 type="text"
-                className="w-full md:w-25rem"
+                className="w-full"
                 placeholder="Email"
               />
             </span>
@@ -51,7 +52,7 @@ const Login: Page = () => {
               <InputText
                 id="password"
                 type="password"
-                className="w-full md:w-25rem"
+                className="w-full"
                 placeholder="Contraseña"
               />
             </span>
@@ -67,7 +68,10 @@ const Login: Page = () => {
                   Recordarme
                 </label>
               </div>
-              <a className="text-600 cursor-pointer hover:text-primary cursor-pointer ml-auto transition-colors transition-duration-300">
+              <a
+                className="text-600 cursor-pointer hover:text-primary cursor-pointer ml-auto transition-colors transition-duration-300"
+                onClick={() => router.push("/auth/forgotpassword")}
+              >
                 ¿Olvidaste tu contraseña?
               </a>
             </div>
@@ -79,7 +83,10 @@ const Login: Page = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 right-0">Soporte</div>
+      <div className="p-4 absolute bottom-0 right-0 font-semibold text-xl flex align-items-center">
+        <PiHeadsetThin style={{ fontSize: "35px" }} />
+        Soporte
+      </div>
     </>
   );
 };
