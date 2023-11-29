@@ -26,7 +26,7 @@ const ForgotPassword: Page = () => {
                 alt="logo empresa"
               />
             </div>
-            <div className="text-900 text-3xl font-bold mb-2 flex justify-content-center align-items-center">
+            <div className="text-900 text-3xl font-bold mb-2 flex justify-content-center align-items-center p-5">
               CERTIFICACIONES SEC
             </div>
             <div className="text-900 text-xl font-bold mb-2">

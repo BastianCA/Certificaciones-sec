@@ -1,13 +1,13 @@
-'use client';
-import { PrimeReactContext } from 'primereact/api';
-import { Button } from 'primereact/button';
-import { InputSwitch, InputSwitchChangeEvent } from 'primereact/inputswitch';
-import { RadioButton, RadioButtonChangeEvent } from 'primereact/radiobutton';
-import { Sidebar } from 'primereact/sidebar';
-import { classNames } from 'primereact/utils';
-import { useContext, useEffect } from 'react';
-import type { AppConfigProps, ColorScheme } from '../types/types';
-import { LayoutContext } from './context/layoutcontext';
+"use client";
+import { PrimeReactContext } from "primereact/api";
+import { Button } from "primereact/button";
+import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
+import { RadioButton, RadioButtonChangeEvent } from "primereact/radiobutton";
+import { Sidebar } from "primereact/sidebar";
+import { classNames } from "primereact/utils";
+import { useContext, useEffect } from "react";
+import type { AppConfigProps, ColorScheme } from "../types/types";
+import { LayoutContext } from "./context/layoutcontext";
 
 const AppConfig = (props: AppConfigProps) => {
   const {
@@ -22,14 +22,14 @@ const AppConfig = (props: AppConfigProps) => {
   const { setRipple, changeTheme } = useContext(PrimeReactContext);
   const scales = [12, 13, 14, 15, 16];
   const componentThemes = [
-    { name: 'indigo', color: '#6366F1' },
-    { name: 'blue', color: '#3B82F6' },
-    { name: 'purple', color: '#8B5CF6' },
-    { name: 'teal', color: '#14B8A6' },
-    { name: 'cyan', color: '#06b6d4' },
-    { name: 'green', color: '#10b981' },
-    { name: 'orange', color: '#f59e0b' },
-    { name: 'pink', color: '#d946ef' },
+    { name: "blue", color: "#3B82F6" },
+    { name: "indigo", color: "#6366F1" },
+    { name: "purple", color: "#8B5CF6" },
+    { name: "teal", color: "#14B8A6" },
+    { name: "cyan", color: "#06b6d4" },
+    { name: "green", color: "#10b981" },
+    { name: "orange", color: "#f59e0b" },
+    { name: "pink", color: "#d946ef" },
   ];
 
   useEffect(() => {
@@ -74,13 +74,13 @@ const AppConfig = (props: AppConfigProps) => {
   };
 
   const changeColorScheme = (colorScheme: ColorScheme) => {
-    changeTheme?.(layoutConfig.colorScheme, colorScheme, 'theme-link', () => {
+    changeTheme?.(layoutConfig.colorScheme, colorScheme, "theme-link", () => {
       setLayoutConfig((prevState) => ({ ...prevState, colorScheme }));
     });
   };
 
   const _changeTheme = (theme: string) => {
-    changeTheme?.(layoutConfig.theme, theme, 'theme-link', () => {
+    changeTheme?.(layoutConfig.theme, theme, "theme-link", () => {
       setLayoutConfig((prevState) => ({ ...prevState, theme }));
     });
   };
@@ -100,7 +100,7 @@ const AppConfig = (props: AppConfigProps) => {
   };
 
   const applyScale = () => {
-    document.documentElement.style.fontSize = layoutConfig.scale + 'px';
+    document.documentElement.style.fontSize = layoutConfig.scale + "px";
   };
 
   useEffect(() => {
@@ -160,8 +160,8 @@ const AppConfig = (props: AppConfigProps) => {
               return (
                 <i
                   key={i}
-                  className={classNames('pi pi-circle-fill text-300', {
-                    'text-primary-500': s === layoutConfig.scale,
+                  className={classNames("pi pi-circle-fill text-300", {
+                    "text-primary-500": s === layoutConfig.scale,
                   })}
                 ></i>
               );
@@ -185,8 +185,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'static'}
-                  checked={layoutConfig.menuMode === 'static'}
+                  value={"static"}
+                  checked={layoutConfig.menuMode === "static"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode1"
                 ></RadioButton>
@@ -195,8 +195,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'overlay'}
-                  checked={layoutConfig.menuMode === 'overlay'}
+                  value={"overlay"}
+                  checked={layoutConfig.menuMode === "overlay"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode2"
                 ></RadioButton>
@@ -205,8 +205,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'slim'}
-                  checked={layoutConfig.menuMode === 'slim'}
+                  value={"slim"}
+                  checked={layoutConfig.menuMode === "slim"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode3"
                 ></RadioButton>
@@ -215,8 +215,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'slim-plus'}
-                  checked={layoutConfig.menuMode === 'slim-plus'}
+                  value={"slim-plus"}
+                  checked={layoutConfig.menuMode === "slim-plus"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode4"
                 ></RadioButton>
@@ -225,8 +225,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'drawer'}
-                  checked={layoutConfig.menuMode === 'drawer'}
+                  value={"drawer"}
+                  checked={layoutConfig.menuMode === "drawer"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode7"
                 ></RadioButton>
@@ -235,8 +235,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'reveal'}
-                  checked={layoutConfig.menuMode === 'reveal'}
+                  value={"reveal"}
+                  checked={layoutConfig.menuMode === "reveal"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode5"
                 ></RadioButton>
@@ -245,8 +245,8 @@ const AppConfig = (props: AppConfigProps) => {
               <div className="flex align-items-center gap-2 w-6">
                 <RadioButton
                   name="menuMode"
-                  value={'horizontal'}
-                  checked={layoutConfig.menuMode === 'horizontal'}
+                  value={"horizontal"}
+                  checked={layoutConfig.menuMode === "horizontal"}
                   onChange={(e) => changeMenuMode(e)}
                   inputId="mode5"
                 ></RadioButton>
@@ -259,7 +259,7 @@ const AppConfig = (props: AppConfigProps) => {
               <RadioButton
                 name="menuTheme"
                 value="colorScheme"
-                checked={layoutConfig.menuTheme === 'colorScheme'}
+                checked={layoutConfig.menuTheme === "colorScheme"}
                 onChange={(e) => changeMenuTheme(e)}
                 inputId="menutheme-colorscheme"
               ></RadioButton>
@@ -269,7 +269,7 @@ const AppConfig = (props: AppConfigProps) => {
               <RadioButton
                 name="menuTheme"
                 value="primaryColor"
-                checked={layoutConfig.menuTheme === 'primaryColor'}
+                checked={layoutConfig.menuTheme === "primaryColor"}
                 onChange={(e) => changeMenuTheme(e)}
                 inputId="menutheme-primarycolor"
               ></RadioButton>
@@ -279,7 +279,7 @@ const AppConfig = (props: AppConfigProps) => {
               <RadioButton
                 name="menuTheme"
                 value="transparent"
-                checked={layoutConfig.menuTheme === 'transparent'}
+                checked={layoutConfig.menuTheme === "transparent"}
                 onChange={(e) => changeMenuTheme(e)}
                 inputId="menutheme-transparent"
               ></RadioButton>
@@ -293,7 +293,7 @@ const AppConfig = (props: AppConfigProps) => {
           <RadioButton
             name="colorScheme"
             value="light"
-            checked={layoutConfig.colorScheme === 'light'}
+            checked={layoutConfig.colorScheme === "light"}
             onChange={(e) => changeColorScheme(e.value)}
             inputId="mode-light"
           ></RadioButton>
@@ -303,7 +303,7 @@ const AppConfig = (props: AppConfigProps) => {
           <RadioButton
             name="colorScheme"
             value="dim"
-            checked={layoutConfig.colorScheme === 'dim'}
+            checked={layoutConfig.colorScheme === "dim"}
             onChange={(e) => changeColorScheme(e.value)}
             inputId="mode-dim"
           ></RadioButton>
@@ -313,7 +313,7 @@ const AppConfig = (props: AppConfigProps) => {
           <RadioButton
             name="colorScheme"
             value="dark"
-            checked={layoutConfig.colorScheme === 'dark'}
+            checked={layoutConfig.colorScheme === "dark"}
             onChange={(e) => changeColorScheme(e.value)}
             inputId="mode-dark"
           ></RadioButton>
@@ -328,7 +328,7 @@ const AppConfig = (props: AppConfigProps) => {
                 <RadioButton
                   name="inputStyle"
                   value="outlined"
-                  checked={layoutConfig.inputStyle === 'outlined'}
+                  checked={layoutConfig.inputStyle === "outlined"}
                   onChange={(e) => changeInputStyle(e)}
                   inputId="outlined_input"
                 ></RadioButton>
@@ -338,7 +338,7 @@ const AppConfig = (props: AppConfigProps) => {
                 <RadioButton
                   name="inputStyle"
                   value="filled"
-                  checked={layoutConfig.inputStyle === 'filled'}
+                  checked={layoutConfig.inputStyle === "filled"}
                   onChange={(e) => changeInputStyle(e)}
                   inputId="filled_input"
                 ></RadioButton>

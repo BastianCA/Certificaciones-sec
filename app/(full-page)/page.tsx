@@ -18,7 +18,7 @@ const Login: Page = () => {
 
   return (
     <>
-      <div className="min-h-screen flex justify-content-center align-items-center bg-white">
+      <div className="min-h-screen flex justify-content-center align-items-center">
         <div className="py-7 px-4 md:px-7 z-1">
           <div className="mb-4">
             <div className="flex justify-content-center align-items-center">
@@ -29,7 +29,7 @@ const Login: Page = () => {
                 alt="logo empresa"
               />
             </div>
-            <div className="text-900 text-3xl font-bold mb-2 flex justify-content-center align-items-center">
+            <div className="text-900 text-3xl font-bold mb-2 flex justify-content-center align-items-center p-5">
               CERTIFICACIONES SEC
             </div>
             <div className="text-900 text-xl font-bold mb-2">Inicia sesión</div>
