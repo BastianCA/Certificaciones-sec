@@ -4,17 +4,14 @@ import { useRouter } from "next/navigation";
 import { Button } from "primereact/button";
 import { Checkbox } from "primereact/checkbox";
 import { InputText } from "primereact/inputtext";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { PiHeadsetThin } from "react-icons/pi";
-import { LayoutContext } from "../../layout/context/layoutcontext";
 import type { Page } from "../../types/types";
 
 const Login: Page = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const router = useRouter();
-  const { layoutConfig } = useContext(LayoutContext);
   const [imageSrc, setImageSrc] = useState("/layout/images/Sodimac.png");
-  const dark = layoutConfig.colorScheme !== "light";
 
   return (
     <>
