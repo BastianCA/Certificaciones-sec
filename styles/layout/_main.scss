@@ -25,4 +25,12 @@ a {
 
 .layout-container {
     min-height: 100vh;
+    background: var(--surface-ground-v2)
+}
+
+.logo-sodimac{
+  
+    background: url('../../public//layout/images/Logo-homecenter-2.png') no-repeat;
+    width: 225px; 
+    height: 169px; 
 }
