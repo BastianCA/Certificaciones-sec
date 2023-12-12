@@ -3,15 +3,62 @@ import { ProductService } from "@/demo/service/ProductService";
 import { Button } from "primereact/button";
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
+import { InputSwitch } from "primereact/inputswitch";
 import { InputText } from "primereact/inputtext";
 import { OverlayPanel } from "primereact/overlaypanel";
 import { Password } from "primereact/password";
 import { useEffect, useRef, useState } from "react";
 import { FaUserEdit } from "react-icons/fa";
+import { IoKeyOutline } from "react-icons/io5";
 
 const Users = () => {
   const [products, setProducts] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [permissions, setPermissions] = useState([
+    {
+      idPermission: 1,
+      name: "Mantendor",
+      permissionDto: [
+        {
+          id: 1,
+          name: "Usuarios",
+          checked: true,
+        },
+        {
+          id: 2,
+          name: "SKU",
+          checked: true,
+        },
+        {
+          id: 3,
+          name: "Organismos",
+          checked: true,
+        },
+      ],
+    },
+    {
+      idPermission: 2,
+      name: "Reportes",
+      permissionDto: [
+        {
+          id: 1,
+          name: "Usuarios",
+          checked: true,
+        },
+        {
+          id: 2,
+          name: "SKU",
+          checked: true,
+        },
+        {
+          id: 3,
+          name: "Organismos",
+          checked: true,
+        },
+      ],
+    },
+  ]);
+  const [checked, setChecked] = useState<boolean>(false);
   const op: any = useRef<OverlayPanel>(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [formData, setFormData] = useState({
@@ -61,6 +108,22 @@ const Users = () => {
     setShowForm(true);
     op.current.hide();
     console.log(e);
+  };
+
+  const handleSwitchChange = (permissionId: number, itemId: number) => {
+    const updatedPermissions = permissions.map((permission) => {
+      if (permission.idPermission === permissionId) {
+        const updatedPermissionDto = permission.permissionDto.map((item) => {
+          if (item.id === itemId) {
+            return { ...item, checked: !item.checked };
+          }
+          return item;
+        });
+        return { ...permission, permissionDto: updatedPermissionDto };
+      }
+      return permission;
+    });
+    setPermissions(updatedPermissions);
   };
 
   return (
@@ -195,6 +258,32 @@ const Users = () => {
                   imagen
                 </div>
               </div>
+            </div>
+            <div className="w-9 flex align-items-center p-3 mb-5">
+              <IoKeyOutline className="text-2xl text-primary mr-2" />
+              <p className="text-2xl font-bold">PERMISOS</p>
+            </div>
+            <div className="w-full flex flex-wrap h-24rem overflow-y-auto">
+              {permissions.map((element: any) => (
+                <div
+                  key={element.idPermission}
+                  className="flex flex-column alig-items-center ml-8"
+                >
+                  <p className="text-primary font-bold">{element.name}</p>
+                  {element.permissionDto.map((items: any) => (
+                    <div className="flex align-item-center mt-3" key={items.id}>
+                      {" "}
+                      <InputSwitch
+                        checked={items.checked}
+                        onChange={() =>
+                          handleSwitchChange(element.idPermission, items.id)
+                        }
+                      />
+                      <p className="ml-2">{items.name}</p>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
             <div className="flex justify-content-end">
               <Button label="Cancelar" />
