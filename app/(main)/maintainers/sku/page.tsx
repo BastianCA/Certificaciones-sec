@@ -36,7 +36,7 @@ const Users = () => {
 
   return (
     <div>
-      <p className="general-title">Mantenedor de SKU</p>
+      <p className="general-title">Mantenedor de Producto</p>
       <div className="w-full flex align-content-center mb-4">
         <p className="general-text">Ingresar SKU o N° de certificación</p>
         <span className="p-input-icon-left ml-8">

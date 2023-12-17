@@ -24,7 +24,7 @@ const AppMenu = () => {
       icon: "pi pi-th-large",
       items: [
         {
-          label: "SKU",
+          label: "Productos",
           icon: "pi pi-fw pi-box",
           to: "/maintainers/sku",
         },
@@ -34,6 +34,16 @@ const AppMenu = () => {
           to: "/maintainers/users",
         },
       ],
+    },
+    {
+      label: "Reportes",
+      icon: "pi pi-th-large",
+      items: [],
+    },
+    {
+      label: "Visualización",
+      icon: "pi pi-th-large",
+      items: [],
     },
   ];
 
