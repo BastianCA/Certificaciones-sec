@@ -72,7 +72,7 @@ const Users = () => {
                 <p className="font-bold">Fecha Actualización : </p>
               </div>
             </div>
-            <div className="w-3 flex align-items-center">
+            <div className="w-3 flex justify-content-center align-items-center">
               <div
                 className="border-round bg-primary font-bold p-3 m-3 flex align-items-center justify-content-center"
                 style={{ width: "200px", height: "200px" }}

@@ -148,112 +148,111 @@ const Users = () => {
       {showForm && (
         <div>
           <div className="card">
-            <div className="flex">
-              <div className="w-full flex flex-column">
-                <div className="w-9 flex align-items-center p-3 mb-5">
+            <div className="flex w-full">
+              <div className="w-9 flex flex-column">
+                <div className="w-full flex align-items-center p-3 mb-5">
                   <FaUserEdit className="text-2xl text-primary mr-2" />
                   <p className="text-2xl font-bold">AGREGAR O EDITAR USUARIO</p>
                 </div>
-                <form className="flex flex-wrap align-items-center">
-                  <div className="flex flex-column mb-8">
-                    <label htmlFor="nombreUsuario">Nombre de usuario</label>
-                    <InputText
-                      name="nombreUsuario"
-                      style={{ width: "500px" }}
-                      value={formData.nombreUsuario}
-                      onChange={handleChange}
-                      placeholder="Nombre de usuario"
-                    />
-                  </div>
-                  <div className="flex flex-column ml-4 mb-8">
-                    <label htmlFor="rut">RUT</label>
-                    <InputText
-                      name="rut"
-                      style={{ width: "300px" }}
-                      value={formData.rut}
-                      onChange={handleChange}
-                      placeholder="RUT"
-                    />
-                  </div>
-                  <div className="flex flex-column ml-4 mb-8">
-                    <label htmlFor="telefono">Teléfono</label>
-                    <InputText
-                      name="telefono"
-                      style={{ width: "300px" }}
-                      value={formData.telefono}
-                      onChange={handleChange}
-                      placeholder="Teléfono"
-                    />
-                  </div>
-                  <div className="flex flex-column mb-8">
-                    <label htmlFor="direccion">Dirección</label>
-                    <InputText
-                      name="direccion"
-                      style={{ width: "500px" }}
-                      value={formData.direccion}
-                      onChange={handleChange}
-                      placeholder="Dirección"
-                    />
-                  </div>
-                  <div className="flex flex-column ml-4 mb-8">
-                    <label htmlFor="email">Email</label>
-                    <InputText
-                      name="email"
-                      style={{ width: "300px" }}
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="flex flex-column ml-4 mb-8">
-                    <label htmlFor="email">Contraseña</label>
-                    <Password
-                      name="contraseña"
-                      value={formData.contraseña}
-                      onChange={handleChange}
-                      placeholder="Contraseña"
-                      toggleMask
-                    />
-                  </div>
-                  <div className="flex flex-column mb-8">
-                    <label htmlFor="fileUpload">Imagen</label>
-                    <span className="p-input-icon-right">
-                      <i className="pi pi-upload" />
+                <form className="flex flex-column">
+                  <div className="flex">
+                    <div className="flex w-7 flex-column mb-8">
+                      <label htmlFor="nombreUsuario">Nombre de usuario</label>
                       <InputText
-                        name="fileUpload"
-                        style={{ width: "300px" }}
-                        value={formData.imagen}
+                        name="nombreUsuario"
+                        value={formData.nombreUsuario}
                         onChange={handleChange}
-                        placeholder="Sube/Actualiza una imagen"
+                        placeholder="Nombre de usuario"
                       />
-                    </span>
+                    </div>
+                    <div className="flex w-3 flex-column ml-4 mb-8">
+                      <label htmlFor="rut">RUT</label>
+                      <InputText
+                        name="rut"
+                        value={formData.rut}
+                        onChange={handleChange}
+                        placeholder="RUT"
+                      />
+                    </div>
+                    <div className="flex w-3 flex-column ml-4 mb-8">
+                      <label htmlFor="telefono">Teléfono</label>
+                      <InputText
+                        name="telefono"
+                        value={formData.telefono}
+                        onChange={handleChange}
+                        placeholder="Teléfono"
+                      />
+                    </div>
                   </div>
-                  <div className="flex flex-column ml-4 mb-8">
-                    <label htmlFor="gerencia">Gerencia</label>
-                    <InputText
-                      name="gerencia"
-                      style={{ width: "300px" }}
-                      value={formData.gerencia}
-                      onChange={handleChange}
-                      placeholder="Gerencia"
-                    />
+                  <div className="flex">
+                    <div className="flex w-7 flex-column mb-8">
+                      <label htmlFor="direccion">Dirección</label>
+                      <InputText
+                        name="direccion"
+                        value={formData.direccion}
+                        onChange={handleChange}
+                        placeholder="Dirección"
+                      />
+                    </div>
+                    <div className="flex w-3 flex-column ml-4 mb-8">
+                      <label htmlFor="email">Email</label>
+                      <InputText
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div className="flex w-3 flex-column ml-4 mb-8">
+                      <label htmlFor="email">Contraseña</label>
+                      <Password
+                        name="contraseña"
+                        value={formData.contraseña}
+                        onChange={handleChange}
+                        placeholder="Contraseña"
+                        toggleMask
+                      />
+                    </div>
                   </div>
-                  <div className="flex flex-column ml-4 mb-8">
-                    <label htmlFor="centroCosto">Centro de costo</label>
-                    <InputText
-                      name="centroCosto"
-                      style={{ width: "300px" }}
-                      value={formData.centroCosto}
-                      onChange={handleChange}
-                      placeholder="Centro de costo"
-                    />
+                  <div className="flex">
+                    <div className="flex w-4 flex-column mb-8">
+                      <label htmlFor="fileUpload">Imagen</label>
+                      <span className="p-input-icon-right">
+                        <InputText
+                          style={{ width: "100%" }}
+                          name="fileUpload"
+                          value={formData.imagen}
+                          onChange={handleChange}
+                          placeholder="Sube/Actualiza una imagen"
+                        />
+                        <i className="pi pi-upload" />
+                      </span>
+                    </div>
+                    <div className="flex w-4 flex-column ml-4 mb-8">
+                      <label htmlFor="gerencia">Gerencia</label>
+                      <InputText
+                        name="gerencia"
+                        value={formData.gerencia}
+                        onChange={handleChange}
+                        placeholder="Gerencia"
+                      />
+                    </div>
+                    <div className="flex w-4 flex-column ml-4 mb-8">
+                      <label htmlFor="centroCosto">Centro de costo</label>
+                      <InputText
+                        name="centroCosto"
+                        value={formData.centroCosto}
+                        onChange={handleChange}
+                        placeholder="Centro de costo"
+                      />
+                    </div>
                   </div>
                 </form>
               </div>
-              <div className="w-3 flex align-items-center">
+              <div className="w-3 flex justify-content-center align-items-center">
                 <div
                   className="border-round bg-primary font-bold p-3 m-3 flex align-items-center justify-content-center"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ width: "150px", height: "150px" }}
                 >
                   imagen
                 </div>

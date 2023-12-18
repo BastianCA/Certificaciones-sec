@@ -1,5 +1,5 @@
 .layout-topbar {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,7 +41,6 @@
         margin: 0;
         padding: 0;
         list-style: none;
-
         li {
             &.topbar-profile {
                 margin-left: 1.5rem;
@@ -50,14 +49,14 @@
                 justify-content: center;
                 
                 img {
-                    width: 2rem;
-                    height: 2rem;
+                    width: 2.5rem;
+                    height: 2.5rem;
                 }
 
                 button {
                     border-radius: 50%;
-                    width: 2rem;
-                    height: 2rem;
+                    width: 2.5rem;
+                    height: 2.5rem;
                     transition: box-shadow var(--transition-duration);
 
                     &:focus {

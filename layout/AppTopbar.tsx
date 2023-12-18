@@ -1,9 +1,9 @@
-import { Button } from 'primereact/button';
-import { InputText } from 'primereact/inputtext';
-import { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
-import type { AppTopbarRef } from '../types/types';
-import AppBreadcrumb from './AppBreadCrumb';
-import { LayoutContext } from './context/layoutcontext';
+import { Button } from "primereact/button";
+import { InputText } from "primereact/inputtext";
+import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
+import type { AppTopbarRef } from "../types/types";
+import AppBreadcrumb from "./AppBreadCrumb";
+import { LayoutContext } from "./context/layoutcontext";
 
 const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
   const { onMenuToggle, showProfileSidebar, showConfigSidebar } =
@@ -63,6 +63,12 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
               onClick={showProfileSidebar}
             >
               <img src="/layout/images/avatar/avatar.png" alt="Profile" />
+              <img
+                alt="country-user"
+                src={`/demo/images/flag/flag_placeholder.png`}
+                className={`flag flag-${localStorage.getItem("user-country")}`}
+                style={{ width: "21px", height: "auto", marginTop: "-25px" }}
+              />
             </button>
           </li>
         </ul>
@@ -71,6 +77,6 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
   );
 });
 
-AppTopbar.displayName = 'AppTopbar';
+AppTopbar.displayName = "AppTopbar";
 
 export default AppTopbar;

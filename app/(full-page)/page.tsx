@@ -92,9 +92,13 @@ const Login: Page = () => {
               </div>
               <Dropdown
                 value={selectedCountry}
-                onChange={(e: DropdownChangeEvent) =>
-                  setSelectedCountry(e.value)
-                }
+                onChange={(e: DropdownChangeEvent) => {
+                  setSelectedCountry(e.value);
+                  localStorage.setItem(
+                    "user-country",
+                    e.value.code.toLowerCase()
+                  );
+                }}
                 options={countries}
                 optionLabel="name"
                 placeholder="Pais"
