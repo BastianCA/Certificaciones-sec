@@ -215,7 +215,7 @@ const Users = () => {
                     </div>
                   </div>
                   <div className="flex">
-                    <div className="flex w-4 flex-column mb-8">
+                    <div className="flex w-3 flex-column mb-8">
                       <label htmlFor="fileUpload">Imagen</label>
                       <span className="p-input-icon-right">
                         <InputText
@@ -228,7 +228,7 @@ const Users = () => {
                         <i className="pi pi-upload" />
                       </span>
                     </div>
-                    <div className="flex w-4 flex-column ml-4 mb-8">
+                    <div className="flex w-3 flex-column ml-4 mb-8">
                       <label htmlFor="gerencia">Gerencia</label>
                       <InputText
                         name="gerencia"
@@ -237,7 +237,7 @@ const Users = () => {
                         placeholder="Gerencia"
                       />
                     </div>
-                    <div className="flex w-4 flex-column ml-4 mb-8">
+                    <div className="flex w-3 flex-column ml-4 mb-8">
                       <label htmlFor="centroCosto">Centro de costo</label>
                       <InputText
                         name="centroCosto"
