@@ -11,10 +11,20 @@ import { useEffect, useRef, useState } from "react";
 import { FaUserEdit } from "react-icons/fa";
 import { IoKeyOutline } from "react-icons/io5";
 
+export interface Permisos {
+  idPermission: number;
+  name: string;
+  permissionDto: {
+    id: number;
+    name: string;
+    checked: boolean;
+  }[];
+}
+
 const Users = () => {
   const [products, setProducts] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [permissions, setPermissions] = useState([
+  const [permissions, setPermissions] = useState<Permisos[]>([
     {
       idPermission: 1,
       name: "Mantendor",
