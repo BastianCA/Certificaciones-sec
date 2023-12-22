@@ -33,7 +33,6 @@ const Login: Page = () => {
     { name: "Spain", code: "ES" },
     { name: "United States", code: "US" },
   ];
-
   const selectedCountryTemplate = (option: Country, props: any) => {
     if (option) {
       return (
