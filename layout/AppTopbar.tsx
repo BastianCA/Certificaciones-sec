@@ -1,6 +1,13 @@
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
-import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import type { AppTopbarRef } from "../types/types";
 import AppBreadcrumb from "./AppBreadCrumb";
 import { LayoutContext } from "./context/layoutcontext";
@@ -9,7 +16,7 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
   const { onMenuToggle, showProfileSidebar, showConfigSidebar } =
     useContext(LayoutContext);
   const menubuttonRef = useRef(null);
-
+  const [userData, setUserData] = useState<any>();
   const onConfigButtonClick = () => {
     showConfigSidebar();
   };
@@ -17,6 +24,10 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
   useImperativeHandle(ref, () => ({
     menubutton: menubuttonRef.current,
   }));
+
+  useEffect(() => {
+    setUserData(localStorage.getItem("user-country"));
+  }, []);
 
   return (
     <div className="layout-topbar">
@@ -66,7 +77,7 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
               <img
                 alt="country-user"
                 src={`/demo/images/flag/flag_placeholder.png`}
-                className={`flag flag-${localStorage.getItem("user-country")}`}
+                className={`flag flag-${userData}`}
                 style={{ width: "21px", height: "auto", marginTop: "-25px" }}
               />
             </button>
