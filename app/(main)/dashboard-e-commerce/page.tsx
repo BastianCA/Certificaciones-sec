@@ -19,6 +19,7 @@ import type {
 } from "../../../types/types";
 
 export default function ECommerce() {
+  const { setLayoutConfig } = useContext(LayoutContext);
   const [products, setProducts] = useState<Demo.Product[]>([]);
   const [chartOptions, setChartOptions] = useState<ChartOptionsState>({});
   const [weeks] = useState([

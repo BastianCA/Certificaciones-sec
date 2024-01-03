@@ -124,7 +124,7 @@ const AppConfig = (props: AppConfigProps) => {
         position="right"
         className="layout-config-sidebar w-18rem"
       >
-        <h5>Themes</h5>
+        {/* <h5>Themes</h5>
         <div className="flex flex-wrap row-gap-3">
           {componentThemes.map((theme, i) => {
             return (
@@ -142,7 +142,7 @@ const AppConfig = (props: AppConfigProps) => {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         <h5>Scale</h5>
         <div className="flex align-items-center">

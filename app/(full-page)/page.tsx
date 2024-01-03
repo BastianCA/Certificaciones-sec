@@ -20,6 +20,7 @@ const Login: Page = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const router = useRouter();
   const [imageSrc, setImageSrc] = useState("/layout/images/Sodimac.png");
+  // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const countries: any[] = [
     { name: "Chile", code: "CL" },
@@ -83,7 +84,7 @@ const Login: Page = () => {
               />
             </div>
             <div className="text-900 text-3xl font-bold mb-2 flex justify-content-center align-items-center p-5">
-              CERTIFICACIONES SEC
+              CERTIFICACIONES SEC <br />
             </div>
             <div className="flex justify-content-between">
               <div className="text-900 text-xl font-bold mb-2">

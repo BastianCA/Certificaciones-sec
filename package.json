@@ -8,10 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"{components,app,service,api-generator}/**/*.{js,ts,tsx,d.ts}\"",
-    "build:test": "env-cmd -f .env.test next build",
-    "start:test": "env-cmd -f .env.test next start",
     "build:prod": "env-cmd -f .env.production next build",
-    "start:prod": "env-cmd -f .env.production next start -p $PORT"
+    "build:test": "env-cmd -f .env.development next build"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.8",
@@ -22,8 +20,9 @@
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
     "chart.js": "4.2.1",
+    "dotenv": "^16.3.1",
     "env-cmd": "^10.1.0",
-    "next": "14.0.3",
+    "next": "^14.0.4",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primereact": "^9.6.2",
@@ -31,6 +30,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-router-dom": "^6.21.1",
     "typescript": "5.1.3"
   },
   "devDependencies": {

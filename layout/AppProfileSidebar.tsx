@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "primereact/badge";
 import { Sidebar } from "primereact/sidebar";
 import { useContext } from "react";
@@ -63,7 +64,10 @@ const AppProfileSidebar = () => {
             </a>
           </li>
           <li>
-            <a className="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150">
+            <a
+              href="/"
+              className="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150"
+            >
               <span>
                 <i className="pi pi-power-off text-xl text-primary"></i>
               </span>

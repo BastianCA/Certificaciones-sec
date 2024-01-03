@@ -43,12 +43,49 @@ const AppMenu = () => {
     {
       label: "Reportes",
       icon: "pi pi-th-large",
-      items: [],
+      items: [
+        {
+          label: "Lotes",
+          icon: "pi pi-fw pi-inbox",
+          to: "/reports/lotes",
+        },
+        {
+          label: "Inspecciones",
+          icon: "pi pi-fw pi-file-edit",
+          to: "/reports/inspections",
+        },
+        {
+          label: "Productos",
+          icon: "pi pi-fw pi-box",
+          to: "/reports/products",
+        },
+        {
+          label: "SLI",
+          icon: "pi pi-fw pi-info-circle",
+          to: "/reports/sli",
+        },
+        {
+          label: "Externos",
+          icon: "pi pi-fw pi-user-plus",
+          to: "/reports/externals",
+        },
+      ],
     },
     {
       label: "Visualización",
       icon: "pi pi-th-large",
-      items: [],
+      items: [
+        {
+          label: "Lotes certificacables con SLI",
+          icon: "pi pi-fw pi-info-circle",
+          to: "/visualations/lotes-cert-sli",
+        },
+        {
+          label: "Estados de lotes",
+          icon: "pi pi-fw pi-info-circle",
+          to: "/visualations/lotes-status",
+        },
+      ],
     },
   ];
 

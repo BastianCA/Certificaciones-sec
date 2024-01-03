@@ -65,6 +65,11 @@ const Users = () => {
           name: "Organismos",
           checked: true,
         },
+        {
+          id: 4,
+          name: "Prueba",
+          checked: true,
+        },
       ],
     },
   ]);
