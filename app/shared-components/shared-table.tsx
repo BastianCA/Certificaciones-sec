@@ -1,5 +1,5 @@
 "use client";
-import { FilterMatchMode, FilterOperator } from "primereact/api";
+import { FilterMatchMode } from "primereact/api";
 import { Button } from "primereact/button";
 import { Calendar, CalendarChangeEvent } from "primereact/calendar";
 import { Column, ColumnFilterElementTemplateOptions } from "primereact/column";
@@ -31,24 +31,30 @@ export const SharedTableFilter: React.FC<SharedTableFilterProps> = ({
   const [dataTable, setDataTable] = useState<any[]>([]);
   const [columns, setColumns] = useState<ColumnMeta[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [filters, setFilters] = useState<any>({});
+  const [filters, setFilters] = useState<any>();
 
   useEffect(() => {
     setColumns(tableColumns);
     setDataTable(dataSource);
+    initFilters(tableColumns);
     setLoading(false);
+  }, [columns, dataSource, tableColumns]);
+
+  const initFilters = (columns: any) => {
+    const filter: any = {};
+
     columns.forEach((column: ColumnMeta) => {
-      filters[column.field] = {
-        operator: FilterOperator.AND,
-        constraints: [
-          {
-            value: null,
-            matchMode: FilterMatchMode.EQUALS,
-          },
-        ],
+      filter[column.field] = {
+        constraints: {
+          value: "",
+          matchMode: FilterMatchMode.CONTAINS,
+        },
       };
     });
-  }, [columns, dataSource, filters, tableColumns]);
+    console.log(filter);
+
+    setFilters(filter);
+  };
 
   const formatDate = (value: Date) => {
     return value.toLocaleDateString("en-CL", {
@@ -139,6 +145,7 @@ export const SharedTableFilter: React.FC<SharedTableFilterProps> = ({
       paginator
       rows={10}
       loading={loading}
+      // filters={filters}
       dataKey="id"
       header={header}
       emptyMessage="No se encontraron resultados."

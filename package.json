@@ -9,7 +9,9 @@
     "lint": "next lint",
     "format": "prettier --write \"{components,app,service,api-generator}/**/*.{js,ts,tsx,d.ts}\"",
     "build:prod": "env-cmd -f .env.production next build",
-    "build:test": "env-cmd -f .env.development next build"
+    "build:test": "env-cmd -f .env.development next build",
+    "start:prod": "env-cmd -f .env.production next start",
+    "start:test": "env-cmd -f .env.development next start"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.8",
